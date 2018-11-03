@@ -31,5 +31,11 @@ class TestLab4(unittest.TestCase):
     	comps = selection_sort(nums)
     	self.assertEqual(nums, [-5, 1, 2, 3, 5, 6, 6, 60])
 
+    def test_sort4(self):
+    	nums = [1,2,5,3,-1]
+    	comps = insertion_sort(nums)
+    	self.assertEqual(comps, 8)
+    	self.assertEqual(nums, [-1,1,2,3,5])
+
 if __name__ == '__main__': 
     unittest.main()

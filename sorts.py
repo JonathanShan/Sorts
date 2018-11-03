@@ -7,7 +7,7 @@ def selection_sort(list_s):
         minimum = list_s[i]
         min_index = i
         j = i + 1
-        while j in range(len(list_s)):
+        while j < len(list_s):
             if list_s[j] < minimum:
                 minimum = list_s[j]
                 min_index = j
@@ -21,15 +21,15 @@ def selection_sort(list_s):
 def insertion_sort(list_i):
     comparison = 0
     for static in range(1,len(list_i)):
-        moving = static
-        if list_i[moving] >= list_i[moving-1] and moving > 0:
-            comparison +=1
+        moving = static  
         while list_i[moving] < list_i[moving-1] and moving > 0:
             temp = list_i[moving]
             list_i[moving] = list_i[moving-1]
             list_i[moving-1] = temp
             moving -= 1
             comparison += 1
+        if moving > 0:
+            comparison +=1
     return comparison
 
    
@@ -42,7 +42,7 @@ def main():
     # Generate 5000 random numbers from 0 to 999,999
     randoms = random.sample(range(1000000), 1000)
     start_time = time.time() 
-    comps = insertion_sort(randoms)
+    comps = selection_sort(randoms)
     stop_time = time.time()
     print(comps, stop_time - start_time)
 
